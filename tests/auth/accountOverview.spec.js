@@ -6,7 +6,7 @@ import { AccountOverviewPage } from "../../pages/AccountOverviewPage";
 test("account balances reflect transfer", async ({ page }) => {
   const overviewPage = new AccountOverviewPage(page);
 
-  await page.goto("https://parabank.parasoft.com/parabank/index.htm");
+  await page.goto("/");
 
   // TODO: Login first
   // Use previously registered username

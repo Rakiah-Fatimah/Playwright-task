@@ -1,3 +1,4 @@
+import { expect } from '@playwright/test';
 // pages/AccountPage.js
 
 export class AccountPage {
@@ -20,7 +21,19 @@ export class AccountPage {
     await this.openAccountButton.click();
   }
 
-  async getNewAccountNumber() {
-    return await this.newAccountNumber.textContent();
+  // async getNewAccountNumber() {
+  //   return await this.newAccountNumber.textContent();
+  // }
+
+   async getNewAccountNumber() {
+
+ await expect(this.newAccountNumber).toBeVisible({ timeout: 10000 });
+ const accountNumber = await this.newAccountNumber.textContent();
+ 
+ if (!accountNumber || accountNumber.trim() === '') {
+   throw new Error('Account number is empty - account creation may have failed');
   }
+  
+  return accountNumber.trim();
+ }
 }

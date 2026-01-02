@@ -7,7 +7,7 @@ test.describe("Login Scenarios", () => {
   test("login fails with invalid credentials", async ({ page }) => {
     const loginPage = new LoginPage(page);
 
-    await page.goto("https://parabank.parasoft.com/parabank/index.htm");
+    await page.goto("/");
 
     await loginPage.login("wronguser", "wrongpass");
 
@@ -18,7 +18,7 @@ test.describe("Login Scenarios", () => {
   test("login succeeds with valid credentials", async ({ page }) => {
     const loginPage = new LoginPage(page);
 
-    await page.goto("https://parabank.parasoft.com/parabank/index.htm");
+    await page.goto("/");
 
     // TODO: Replace with username registered in Scenario 1
     const validUsername = "REPLACE_WITH_REGISTERED_USERNAME";

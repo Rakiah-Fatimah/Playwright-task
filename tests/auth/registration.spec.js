@@ -6,7 +6,7 @@ import { RegisterPage } from "../../pages/RegisterPage";
 test("user can register successfully", async ({ page }) => {
   const registerPage = new RegisterPage(page);
 
-  await page.goto("https://parabank.parasoft.com/parabank/index.htm");
+  await page.goto("/");
   await registerPage.navigateToRegister();
 
   // Create unique username
